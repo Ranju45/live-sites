@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roof 360 Real Estate and Properties — Frazer Town, Bengaluru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1EBDC;
+    --paper-deep:#E8E0CC;
+    --ink:#20261F;
+    --ink-soft:#4A5245;
+    --brass:#A9823F;
+    --brass-deep:#8A6A2F;
+    --brick:#8C4A32;
+    --line: rgba(32,38,31,0.18);
+    --line-strong: rgba(32,38,31,0.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  /* ===== Header ===== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,235,220,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{
+    display:flex; align-items:baseline; gap:8px;
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.15rem;
+  }
+  .brand .mark{
+    display:inline-block; width:11px; height:11px; border-radius:50%;
+    background:var(--brick); transform:translateY(-1px);
+  }
+  .navlinks{display:flex; gap:34px; font-size:0.92rem; color:var(--ink-soft);}
+  .navlinks a:hover{color:var(--ink);}
+  .navcta{
+    font-size:0.88rem; padding:9px 18px; border:1px solid var(--ink);
+    border-radius:2px; white-space:nowrap;
+  }
+  .navcta:hover{background:var(--ink); color:var(--paper);}
+  @media (max-width:760px){ .navlinks{display:none;} }
+
+  /* ===== Hero ===== */
+  .hero{
+    padding:96px 0 72px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:end;
+  }
+  @media (max-width:820px){ .hero-grid{grid-template-columns:1fr; gap:36px;} }
+  .eyebrow{
+    font-size:0.82rem; color:var(--brick); margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow .rule{width:28px; height:1px; background:var(--brick);}
+  .hero h1{
+    font-size:clamp(2.4rem, 5.2vw, 3.9rem);
+    line-height:1.03;
+    max-width:11ch;
+  }
+  .hero p.lede{
+    margin-top:22px; max-width:44ch; font-size:1.08rem; color:var(--ink-soft);
+  }
+  .hero-actions{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; font-size:0.94rem; border-radius:2px;
+    border:1px solid var(--ink);
+  }
+  .btn-solid{background:var(--ink); color:var(--paper);}
+  .btn-solid:hover{background:var(--brick); border-color:var(--brick);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+
+  .hero-media{
+    border:1px solid var(--line-strong);
+    overflow:hidden;
+    aspect-ratio:4/5;
+  }
+  .hero-media img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  .hero-panel{
+    border:1px solid var(--line-strong);
+    border-left:none; border-right:none;
+    padding:28px 0;
+    margin-top:56px;
+    display:flex; gap:0;
+  }
+  .hero-panel .stat-row{
+    flex:1;
+    display:flex; flex-direction:column; gap:8px;
+    padding:0 28px;
+    border-left:1px solid var(--line);
+  }
+  .hero-panel .stat-row:first-child{border-left:none; padding-left:0;}
+  .hero-panel .num{
+    font-family:'Fraunces', serif; font-size:2.6rem; font-weight:600; color:var(--brick);
+    line-height:1;
+  }
+  .stat-label{font-size:0.85rem; color:var(--ink-soft); max-width:18ch;}
+  @media (max-width:760px){
+    .hero-panel{flex-direction:column; gap:20px;}
+    .hero-panel .stat-row{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:16px;}
+    .hero-panel .stat-row:first-child{border-top:none; padding-top:0;}
+  }
+
+  /* ===== Marquee strip ===== */
+  .strip{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
+    overflow:hidden;
+  }
+  .strip-inner{
+    display:flex; gap:48px; font-size:0.82rem; color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .strip-inner span{display:flex; align-items:center; gap:10px;}
+  .strip-inner span::before{content:"—"; color:var(--brass);}
+
+  /* ===== Section heading ===== */
+  .section{padding:88px 0; border-bottom:1px solid var(--line);}
+  .section-head{
+    display:grid; grid-template-columns:0.9fr 1.5fr; gap:40px; margin-bottom:52px;
+  }
+  @media (max-width:760px){ .section-head{grid-template-columns:1fr; gap:16px;} }
+  .section-head h2{font-size:clamp(1.7rem,3.2vw,2.3rem);}
+  .section-head .desc{color:var(--ink-soft); max-width:46ch; align-self:end;}
+
+  /* ===== Property types (ledger style) ===== */
+  .ledger{border-top:1px solid var(--line-strong);}
+  .ledger-row{
+    display:grid; grid-template-columns:60px 1fr 1fr;
+    gap:24px; padding:26px 0; border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  @media (max-width:640px){ .ledger-row{grid-template-columns:40px 1fr; }
+    .ledger-row .ledger-desc{grid-column:2; margin-top:6px;} }
+  .ledger-row .idx{font-family:'Fraunces', serif; color:var(--brass-deep); font-size:1rem;}
+  .ledger-row h3{font-size:1.2rem; font-weight:500;}
+  .ledger-desc{color:var(--ink-soft); font-size:0.95rem;}
+
+  .photo-strip{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:48px;
+  }
+  .photo-strip img{
+    width:100%; aspect-ratio:4/5; object-fit:cover; border:1px solid var(--line-strong);
+  }
+  @media (max-width:640px){ .photo-strip{grid-template-columns:1fr 1fr;} .photo-strip img:last-child{grid-column:1/3;} }
+
+  /* ===== Process ===== */
+  .process{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);}
+  .process-step{background:var(--paper); padding:32px 28px;}
+  @media (max-width:760px){ .process{grid-template-columns:1fr;} }
+  .process-step .stepnum{
+    font-family:'Fraunces', serif; color:var(--brick); font-size:1.5rem; margin-bottom:14px;
+  }
+  .process-step h3{font-size:1.08rem; margin-bottom:10px; font-weight:500;}
+  .process-step p{color:var(--ink-soft); font-size:0.94rem;}
+
+  /* ===== Credentials ===== */
+  .creds{display:flex; flex-wrap:wrap; gap:14px;}
+  .cred-pill{
+    border:1px solid var(--line-strong); padding:10px 18px; font-size:0.86rem;
+    color:var(--ink-soft);
+  }
+
+  /* ===== Testimonials ===== */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);}
+  @media (max-width:820px){ .testi-grid{grid-template-columns:1fr;} }
+  .testi{background:var(--paper); padding:30px 26px;}
+  .testi p{font-size:1rem; color:var(--ink); margin-bottom:18px;}
+  .testi .who{font-size:0.85rem; color:var(--brick);}
+
+  /* ===== Contact ===== */
+  .gallery-strip{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+  }
+  .gallery-strip img{
+    width:100%; aspect-ratio:16/11; object-fit:cover; border:1px solid var(--line-strong);
+  }
+  @media (max-width:640px){ .gallery-strip{grid-template-columns:1fr;} }
+
+  .contact{
+    background:var(--ink); color:var(--paper); padding:88px 0;
+  }
+  .contact h2{color:var(--paper); font-size:clamp(1.8rem,3.4vw,2.6rem); max-width:16ch;}
+  .contact-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:56px; margin-top:44px;}
+  @media (max-width:820px){ .contact-grid{grid-template-columns:1fr; gap:36px;} }
+  .contact p.lede{color:rgba(241,235,220,0.72); max-width:44ch; font-size:1.02rem;}
+  .contact-actions{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
+  .btn-paper{border:1px solid var(--paper); color:var(--paper);}
+  .btn-paper:hover{background:var(--paper); color:var(--ink);}
+  .btn-brass{background:var(--brass); border:1px solid var(--brass); color:var(--ink);}
+  .btn-brass:hover{background:var(--brass-deep); border-color:var(--brass-deep);}
+  .agent-photo{margin-top:32px; border:1px solid rgba(241,235,220,0.3);}
+  .agent-photo img{width:100%; height:auto; display:block; aspect-ratio:14/9; object-fit:cover;}
+  .contact-info{border-left:1px solid rgba(241,235,220,0.25); padding-left:36px;}
+  @media (max-width:820px){ .contact-info{border-left:none; padding-left:0; border-top:1px solid rgba(241,235,220,0.25); padding-top:28px;} }
+  .contact-info .row{margin-bottom:22px;}
+  .contact-info .label{font-size:0.78rem; color:rgba(241,235,220,0.5); margin-bottom:4px;}
+  .contact-info .value{font-size:1.02rem;}
+
+  footer{padding:28px 0; font-size:0.82rem; color:var(--ink-soft); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="mark"></span>Roof 360 <span style="font-weight:400; color:var(--ink-soft); font-size:0.9rem; font-family:'Work Sans',sans-serif;">Real Estate &amp; Properties</span></div>
+    <nav class="navlinks">
+      <a href="#services">What we handle</a>
+      <a href="#process">How it works</a>
+      <a href="#trust">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="navcta" href="tel:+919845022178">+91 98450 22178</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="rule"></span>FRAZER TOWN, BENGALURU · SINCE 2012</div>
+      <h1>Property in Bengaluru, handled by someone who's done it 500 times before.</h1>
+      <p class="lede">Roof 360 is Munawar's real estate practice — sales, rentals and management across flats, villas, commercial space and land, built on fourteen years of knowing this city block by block.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="https://wa.me/919845022178" target="_blank">Message on WhatsApp</a>
+        <a class="btn btn-ghost" href="#services">See what we handle</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="i1.jpg" alt="Residential building, Bengaluru">
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-panel">
+      <div class="stat-row"><span class="num">14</span><span class="stat-label">years finding people the right property</span></div>
+      <div class="stat-row"><span class="num">RERA</span><span class="stat-label">registered with the Government of Karnataka</span></div>
+      <div class="stat-row"><span class="num">4</span><span class="stat-label">industry bodies: BRAI, NAR-India, CREA, FIABCI</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap strip-inner">
+    <span>Residential sales</span>
+    <span>Rentals &amp; tenant placement</span>
+    <span>Commercial &amp; office space</span>
+    <span>Warehousing &amp; industrial</span>
+    <span>Residential plots</span>
+    <span>Joint development</span>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we handle</h2>
+      <p class="desc">Every category below is something Munawar has closed personally — not a referral network, not a call centre. One person, the full transaction.</p>
+    </div>
+    <div class="ledger">
+      <div class="ledger-row">
+        <span class="idx">01</span>
+        <h3>Flats &amp; apartments</h3>
+        <p class="ledger-desc">Buying, selling and renting across Bengaluru Central, East, North, South and West — from resale flats to new-launch bookings.</p>
+      </div>
+      <div class="ledger-row">
+        <span class="idx">02</span>
+        <h3>Independent villas &amp; houses</h3>
+        <p class="ledger-desc">Full-house sales and rentals, including documentation, katha transfer support and buyer verification.</p>
+      </div>
+      <div class="ledger-row">
+        <span class="idx">03</span>
+        <h3>Commercial &amp; office space</h3>
+        <p class="ledger-desc">Leasing and sale of office floors, showrooms and retail space for businesses setting up or relocating in Bengaluru.</p>
+      </div>
+      <div class="ledger-row">
+        <span class="idx">04</span>
+        <h3>Warehousing &amp; industrial</h3>
+        <p class="ledger-desc">Godowns and industrial units for storage, logistics and manufacturing use, sized to fit the operation.</p>
+      </div>
+      <div class="ledger-row">
+        <span class="idx">05</span>
+        <h3>Residential plots &amp; land</h3>
+        <p class="ledger-desc">Plot sales with clean-title verification, plus joint development advisory for landowners.</p>
+      </div>
+      <div class="ledger-row">
+        <span class="idx">06</span>
+        <h3>Rental management</h3>
+        <p class="ledger-desc">Ongoing tenant sourcing and support for owners who'd rather not manage a rental property themselves.</p>
+      </div>
+    </div>
+    <div class="photo-strip">
+      <img src="i2.jpg" alt="Villa exterior">
+      <img src="i3.jpg" alt="Apartment interior">
+      <img src="i4.jpg" alt="Commercial office space">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How working together goes</h2>
+      <p class="desc">No portal to sign up for, no bidding war between agents — a straightforward process built around one point of contact.</p>
+    </div>
+    <div class="process">
+      <div class="process-step">
+        <div class="stepnum">1</div>
+        <h3>Tell us what you need</h3>
+        <p>A call or WhatsApp message with your budget, location and timeline — buying, selling, renting or letting out.</p>
+      </div>
+      <div class="process-step">
+        <div class="stepnum">2</div>
+        <h3>Shortlist &amp; visits</h3>
+        <p>Munawar personally shortlists matching properties and accompanies visits, so nothing gets lost between agents.</p>
+      </div>
+      <div class="process-step">
+        <div class="stepnum">3</div>
+        <h3>Paperwork to handover</h3>
+        <p>Support through negotiation, documentation and registration, with continued availability after the deal closes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Registered, affiliated, accountable</h2>
+      <p class="desc">Real estate in Bengaluru runs on trust more than contracts — these are the credentials behind it.</p>
+    </div>
+    <div class="creds">
+      <span class="cred-pill">RERA Registered — Govt. of Karnataka</span>
+      <span class="cred-pill">Member, Bangalore Realtors Association India (BRAI)</span>
+      <span class="cred-pill">Member, NAR-India</span>
+      <span class="cred-pill">Member, CREA (India)</span>
+      <span class="cred-pill">Member, FIABCI-India</span>
+      <span class="cred-pill">Operating since 2012</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What clients say</h2>
+      <p class="desc">A few notes from people Roof 360 has helped buy, sell, rent or manage property.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <p>Handled our rental search personally from the first call to the paperwork, and kept in touch well after we'd moved in.</p>
+        <div class="who">— Property owner, tenant placement</div>
+      </div>
+      <div class="testi">
+        <p>Straightforward about pricing and honest when a property wasn't the right fit, which made the whole search feel trustworthy.</p>
+        <div class="who">— Homebuyer, Bengaluru East</div>
+      </div>
+      <div class="testi">
+        <p>Coordinated our plot purchase remotely while we were abroad, handling documentation and registration end to end.</p>
+        <div class="who">— Land buyer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none; padding-top:0;">
+  <div class="wrap">
+    <div class="gallery-strip">
+      <img src="i6.avif" alt="Recent property, Bengaluru">
+      <img src="i7.jpg" alt="Recent property, Bengaluru">
+      <img src="i8.jpg" alt="Recent property, Bengaluru">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Looking to buy, sell, rent or let out a property in Bengaluru?</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="lede">Send a message with what you're looking for — a flat, a villa, office space or land — and Munawar will get back to you directly.</p>
+        <div class="contact-actions">
+          <a class="btn btn-brass" href="https://wa.me/919845022178" target="_blank">WhatsApp Munawar</a>
+          <a class="btn btn-paper" href="tel:+919845022178">Call +91 98450 22178</a>
+        </div>
+        <div class="agent-photo">
+          <img src="i5.jpg" alt="Roof 360 office, Frazer Town">
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="row">
+          <div class="label">OFFICE</div>
+          <div class="value">No. 68/1, 2nd Floor, Coles Road<br>Frazer Town, Bengaluru 560005</div>
+        </div>
+        <div class="row">
+          <div class="label">SERVING</div>
+          <div class="value">Bengaluru Central, East, North, South &amp; West</div>
+        </div>
+        <div class="row">
+          <div class="label">INSTAGRAM</div>
+          <div class="value">@roof360realestate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© Roof 360 Real Estate and Properties, Bengaluru</span>
+  <span>RERA Registered · Est. 2012</span>
+</footer>
+
+</body>
+</html>
